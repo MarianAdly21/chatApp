@@ -1,10 +1,9 @@
-import 'package:chat_app/views/register_view.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class LoginView extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Sign in',
+                  'Register',
                   style: TextStyle(
                     fontSize: 28,
                     color: Colors.white,
@@ -57,7 +56,7 @@ class LoginView extends StatelessWidget {
               height: 20,
             ),
             CustomButton(
-              text: "Sign In",
+              text: "REGISTER",
             ),
             const SizedBox(
               height: 5,
@@ -66,27 +65,17 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Don\'t have an account?',
+                  'Already have an account?',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return RegisterView();
-                      }),
-                    );
-                  },
-                  child: Text(
-                    ' Register',
-                    style: TextStyle(
-                      color: Color(0xff4c608e),
-                      fontSize: 18,
-                    ),
+                Text(
+                  ' Login',
+                  style: TextStyle(
+                    color: Color(0xff4c608e),
+                    fontSize: 18,
                   ),
                 ),
               ],
