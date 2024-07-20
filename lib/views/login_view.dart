@@ -1,3 +1,4 @@
+import 'package:chat_app/constants.dart';
 import 'package:chat_app/views/register_view.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
@@ -9,28 +10,33 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff6cbed9),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
+        child: ListView(
           children: [
-            Spacer(
-              flex: 1,
+            const SizedBox(
+              height: 60,
             ),
             Image.asset(
               'assets/images/login2.webp',
               height: 170,
             ),
-            Text(
-              "OhSnap",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 35,
-                fontFamily: 'pacifico',
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "OhSnap",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
+                    fontFamily: 'pacifico',
+                  ),
+                ),
+              ],
             ),
-            Spacer(
-              flex: 3,
+            const SizedBox(
+              height: 50,
             ),
             Row(
               children: [
@@ -74,12 +80,7 @@ class LoginView extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return RegisterView();
-                      }),
-                    );
+                    Navigator.pushNamed(context, RegisterView.id);
                   },
                   child: Text(
                     ' Register',
@@ -91,9 +92,6 @@ class LoginView extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(
-              flex: 4,
-            )
           ],
         ),
       ),

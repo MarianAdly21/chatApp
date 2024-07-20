@@ -1,35 +1,41 @@
+import 'package:chat_app/constants.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
-
+  static String id = "RegisterView";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff6cbed9),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
+        child: ListView(
           children: [
-            Spacer(
-              flex: 1,
+            const SizedBox(
+              height: 60,
             ),
             Image.asset(
               'assets/images/login2.webp',
               height: 170,
             ),
-            Text(
-              "OhSnap",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 35,
-                fontFamily: 'pacifico',
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "OhSnap",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
+                    fontFamily: 'pacifico',
+                  ),
+                ),
+              ],
             ),
-            Spacer(
-              flex: 3,
+            const SizedBox(
+              height: 50,
             ),
             Row(
               children: [
@@ -71,18 +77,20 @@ class RegisterView extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
-                Text(
-                  ' Login',
-                  style: TextStyle(
-                    color: Color(0xff4c608e),
-                    fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    ' Login',
+                    style: TextStyle(
+                      color: Color(0xff4c608e),
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ],
             ),
-            Spacer(
-              flex: 4,
-            )
           ],
         ),
       ),
